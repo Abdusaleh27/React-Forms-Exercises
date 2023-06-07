@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import BoxList from "./color-box-maker/BoxList";
+import Navigation from "./color-box-maker/Navigation";
+import TodoList from "./todo-app/TodoList";
 
 function App() {
+  const [navigate, setNavigate] = useState(true);
+  const displayPage = (firstPage) => {
+    setNavigate(() => firstPage);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navigation display={displayPage} />
+      {navigate ? <BoxList /> : <TodoList />}
     </div>
   );
 }

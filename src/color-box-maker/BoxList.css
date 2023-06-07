@@ -1,0 +1,12 @@
+.parent {
+    position: relative;
+}
+.delete-button {
+    
+    text-align: center;
+    top: 5px;
+    margin: auto;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    width: 50px;
+}
